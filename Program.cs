@@ -13,7 +13,6 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Adds services to the container.
-        builder.Services.AddControllers();
         builder.Services.AddControllersWithViews();
 
         builder.Services.AddDbContext<PetContext>(options =>
@@ -21,6 +20,7 @@ internal class Program
         builder.Services.AddAuthorization();
 
         var app = builder.Build();
+
 
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
